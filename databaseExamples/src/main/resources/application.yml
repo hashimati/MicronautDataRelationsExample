@@ -1,0 +1,57 @@
+micronaut:
+  application:
+    name: databaseExamples
+  server:
+    port: 8080
+---
+jackson:
+  bean-introspection-module: true
+
+---
+micronaut:
+  views:
+    thymeleaf:
+      enabled: true
+---
+micronaut:
+  router:
+    static-resources:
+      default:
+        mapping: "/**"
+      '*':
+        paths:
+        - "classpath:static"
+
+---
+
+datasources:
+  default:
+    url: jdbc:mysql://127.0.0.1:3306/helloworlddb
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 'Hello@1234'
+    dialect: MYSQL
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+
+---
+
+datasources.default: {}
+
+# ---
+# liquibase:
+#   datasources:
+#     default:
+#       change-log: 'classpath:db/liquibase-changelog.xml'
+# datasources:
+#   persons:
+#     url: jdbc:mysql://127.0.0.1:3306/helloworlddb
+#     driverClassName: com.mysql.cj.jdbc.Driver
+#     username: root
+#     password: 'Hello@1234'
+#     schema-generate: CREATE_DROP
+#     dialect: MYSQL

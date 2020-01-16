@@ -1,0 +1,1 @@
+mn create-app io-hashimati-databaseexamples --profile service --lang java --build gradle--features data-hibernate-jpa --features jdbc-tomcat --features data-jdbc --features swagger-java --features liquibase

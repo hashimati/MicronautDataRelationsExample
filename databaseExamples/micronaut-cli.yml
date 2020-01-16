@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: io.hashimati.databaseexamples
+---
+testFramework: junit
+sourceLanguage: java
